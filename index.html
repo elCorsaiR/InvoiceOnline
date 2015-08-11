@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="CorsaiR">
+
+    <title>Invoice Online</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/invoice.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default hidden-print">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Invoice Online</a>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 main_area">
+            <div class="row">
+                <div class="col-xs-6">
+                    <table width="100%" cellpadding="0" cellspacing="0" style="table-layout: fixed">
+                        <tbody>
+                        <tr>
+                            <td><strong>Invoice #</strong></td>
+                            <td>
+                                <input type="text" class="w100" id="invoice_no" tabindex="13" placeholder="Invoice #"
+                                       name="invoice_number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Invoice Date</strong></td>
+                            <td>
+                                <input type="text" id="invoice_date" tabindex="15" name="invoice_date">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Due Date</strong></td>
+                            <td>
+                                <input id="due_date" tabindex="17" type="text" name="due_date">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="invoice_title" class="col-xs-6">INVOICE</div>
+            </div>
+
+            <div id="section2" class="row">
+                <div class="col-xs-6">
+                    <input type="text" id="company_name" tabindex="1" autofocus
+                           placeholder="Company Name" name="company_name">
+                    <br>
+
+                    <input type="text" id="street_address" class="adr" tabindex="3" placeholder="Company’s Address"
+                           name="street_address">
+                    <br>
+
+                    <input type="text" class="adr" id="address" tabindex="4" placeholder="City, State, Zip code"
+                           name="address">
+                    <br>
+
+                    <input type="text" class="adr" tabindex="4" id="country" placeholder="Country" name="country">
+                </div>
+
+                <div id="bill_to" class="col-xs-6">
+                    <strong>Bill To:</strong><br>
+                    <input type="text" id="client_name" class="adr" tabindex="6" placeholder="Client’s Company"
+                           name="client_name"> <br>
+
+                    <input type="text" id="billing_street_address" class="adr" tabindex="7"
+                           placeholder="Client’s Address" name="client_billing_street_address"><br>
+
+                    <input type="text" id="billing_address" class="adr" tabindex="8" placeholder="City, State, Zip code"
+                           name="client_billing_address"><br>
+
+                    <input type="text" id="billing_country" class="adr" tabindex="10" placeholder="Country"
+                           name="client_billing_country">
+                </div>
+
+            </div>
+
+            <!-- Line items-->
+            <table id="items_table" class="table">
+                <thead>
+                <tr>
+                    <th width="59%">Description</th>
+                    <th width="13%" class="text-right">Qty</th>
+                    <th width="13%" class="text-right">Unit price</th>
+                    <th width="13%" class="text-right">Amount</th>
+                    <th width="2%">&nbsp;</th>
+                </tr>
+                </thead>
+
+                <tbody id="items">
+                <tr id="rowTemplate" class="item hide">
+                    <td>
+                        <input type="text" class="w100 description" tabindex="20" id="description_0"
+                               placeholder="Item description" name="description_0">
+                    </td>
+                    <td>
+                        <input type="text" class="w100 text-right quantity" value="1" tabindex="21" id="quantity_0"
+                               name="quantity_0">
+                    </td>
+                    <td>
+                        <input type="text" class="w100 text-right unit_price" value="0.00" tabindex="22"
+                               id="unit_price_0"
+                               name="unit_price_0">
+                    </td>
+                    <td id="total_0" class="text-right">
+                        0.00
+                    </td>
+                    <td>
+                        <button id="itemClose.0" type="button"
+                                class="btn btn-xs btn-danger delete-button hide hidden-print">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+
+                <tbody>
+                <tr>
+                    <td rowspan="3">
+                        <button id="append_item_button" type="button" class="btn btn-xs btn-success hidden-print">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Item
+                        </button>
+                    </td>
+
+                    <td colspan="2">Sub Total</td>
+                    <td id="sub_total" class="text-right"></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Tax (<input type="text" value="10" tabindex="23" id="tax" size="2" maxlength="2"
+                                    name="tax">%)
+                    </td>
+                    <td id="tax_amount" class="text-right"> 0.00</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr class="tot">
+                    <td colspan="2"> TOTAL DUE</td>
+                    <td id="total" class="text-right">
+                        0.00
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                </tbody>
+
+
+            </table>
+
+            <div id="terms_caption">
+                Terms
+            </div>
+            <div>
+                <textarea id="terms" tabindex="31" name="terms">Payment terms: net 30.</textarea>
+            </div>
+
+        </div>
+
+        <div class="col-sm-4 hidden-print">
+            <div class="info"><h3>Click on underlined items to edit</h3></div>
+
+            <div id="tools">
+                <button class="btn btn-success btn-block"><span class="glyphicon glyphicon-floppy-save"
+                                                                aria-hidden="true"></span> Save
+                </button>
+                <button class="btn btn-block"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print
+                </button>
+            </div>
+            <div class="info">
+                Need custom invoicing application? <a href="Contact-support.html" target="_blank">Contact me!</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/invoice.js"></script>
+
+</body>
+</html>
