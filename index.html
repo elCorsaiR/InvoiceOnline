@@ -32,7 +32,7 @@
 <nav class="navbar navbar-default hidden-print">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Invoice Online</a>
+            <a class="navbar-brand" href="#">Invoice Creator</a>
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -120,8 +120,8 @@
                 <tbody id="items">
                 <tr id="rowTemplate" class="item hide">
                     <td>
-                        <input type="text" class="w100 description" tabindex="20" id="description_0"
-                               placeholder="Item description" name="description_0">
+                        <textarea  class="w100 description" tabindex="20" id="description_0"
+                                  placeholder="Item description" name="description_0" rows="1"></textarea>
                     </td>
                     <td>
                         <input type="text" class="w100 text-right quantity" value="1" tabindex="21" id="quantity_0"
@@ -146,10 +146,18 @@
 
                 <tbody>
                 <tr>
-                    <td rowspan="3">
+                    <td rowspan="3" id="left-subtotal-area">
                         <button id="append_item_button" type="button" class="btn btn-xs btn-success hidden-print">
                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add Item
                         </button>
+
+                        <div id="terms_caption">
+                            Terms
+                        </div>
+                        <div>
+                            <textarea id="terms" tabindex="31" name="terms">Payment terms: net 30.</textarea>
+                        </div>
+
                     </td>
 
                     <td colspan="2">Sub Total</td>
@@ -177,11 +185,11 @@
 
             </table>
 
-            <div id="terms_caption">
-                Terms
+            <div id="note_caption">
+                Note
             </div>
             <div>
-                <textarea id="terms" tabindex="31" name="terms">Payment terms: net 30.</textarea>
+                <textarea id="note" tabindex="31" name="note" placeholder="Note to customer..." ></textarea>
             </div>
 
         </div>
@@ -195,9 +203,6 @@
                 </button>
                 <button class="btn btn-block"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print
                 </button>
-            </div>
-            <div class="info">
-                Need custom invoicing application? <a href="Contact-support.html" target="_blank">Contact me!</a>
             </div>
 
         </div>

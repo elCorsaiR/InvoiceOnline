@@ -59,9 +59,12 @@
         margin-top: 30px;
     }
 
-    #terms_caption {
+    #terms_caption, #note_caption {
         margin-top: 30px;
         font-weight: bold;
+    }
+    #left-subtotal-area{
+        vertical-align: bottom;
     }
 
     #terms {
@@ -93,6 +96,14 @@
         width: auto;
     }
 
+    textarea {
+        wrap: hard;
+        height: 24px;
+        max-width: 100%;
+    }
+    .w100 description {
+        max-width: 390px;
+    }
 }
 
 @media screen {
@@ -114,5 +125,34 @@
 
     input, textarea {
         border: none;
+    }
+    textarea {
+        overflow: hidden; /* Hide scrollbars */
+        resize: none; /* hide resize icon */
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */
+        color: transparent;
+    }
+    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        color: transparent;
+    }
+    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: transparent;
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: transparent;
+    }
+    #note_caption {
+        display: none;
+    }
+    #note {
+        padding-top: 5px;
+    }
+    #items_table {
+        width: 100%;
+        display: table;
+    }
+    .col-sm-8 {
+        width: 100%;
     }
 }
