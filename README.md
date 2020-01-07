@@ -21,8 +21,8 @@ This is a fork of  [Alex P.'s](https://www.upwork.com/freelancers/~0182eeece8bbb
 
 Here's the UI in a browser:
 
-<img src="/img/screenshot.png" alt="Invoice Online">
+<kbd><img src="/img/screenshot.png" alt="Invoice Online"></kbd>
 
 Here's what it looks like when you print it:
 
-<img src="/img/print.png" alt="Invoice Print">
+<kbd><img src="/img/print.png" alt="Invoice Print"></kbd>
