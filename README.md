@@ -6,8 +6,10 @@ paper.
 ## Use
 
 1. Download this repo
-1. Open `index.html` in a browser 
-1. Fill out invoice and print
+1. Open `index.html` in a browser
+1. Add line items and fill out each line's detail.. Adding a new line item uses the prior lines item price.
+1. Print and send
+1. Profit! 
 
 Optionally, you could have the 2nd step above be "put in web accessible directory", but this app works both with and with a web server.  The simplicity of just HTML/CSS/JavaScript!!
 
