@@ -22,7 +22,7 @@ $(document).ready(function () {
     showDeleteButton(this);
 
     $('#tax').on('blur', function () {
-        updateTaxAndTotal();
+        updateTaxAndTotal(this);
     });
 });
 
