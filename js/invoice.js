@@ -21,12 +21,7 @@ $(document).ready(function () {
     items.on('click', '.delete-button', function () {
         removeLineItem(this);
     });
-    items.on('mouseover', '.item', function () {
-        showDeleteButton(this);
-    });
-    items.on('mouseout', '.item', function () {
-        hideDeleteButton(this);
-    });
+    showDeleteButton(this);
 
     $('#tax').on('blur', function () {
         updateTaxAndTotal(this);
