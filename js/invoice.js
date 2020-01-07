@@ -3,8 +3,6 @@ $(document).ready(function () {
     $('#due_date').attr('placeholder', Date().split(' ').splice(1, 3).join(' '));
 
     appendItem();
-    appendItem();
-    appendItem();
     updateSubTotal();
 
     $("#append_item_button").on("click", function () {
@@ -28,8 +26,11 @@ $(document).ready(function () {
     });
 });
 
+
+
 appendItem = function () {
     var last_item_id = $('#items > tr:last').attr("id");
+    var last_item_price = $('#' + last_item_id + ' .unit_price').val();
     var underscore_position = last_item_id.lastIndexOf("_");
     var index = Number(last_item_id.substring(underscore_position + 1));
     if (isNaN(index)) {
@@ -42,7 +43,9 @@ appendItem = function () {
     newRow.attr("id", itemId).removeClass("hide");
     updateIds(newRow, index);
     newRow.appendTo("#items");
+    $('#' + itemId + ' .unit_price').val(last_item_price);
     updateTabIndex(index);
+    updateItemTotal($(newRow));
 };
 
 updateIds = function (element, index) {
