@@ -10,6 +10,8 @@ paper.
 1. Point a browser at it
 1. Fill out invoice and print
 
+**Note** -  This does not support saving and editing old invoice.  Just simple one off invoice creating ;)
+
 ## Contributions & Thanks 
 
 Contributions welcome - open a PR and let's do it!!
