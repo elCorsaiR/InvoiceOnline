@@ -6,9 +6,10 @@ paper.
 ## Use
 
 1. Download this repo
-1. Put it in web accessible directory
-1. Point a browser at it
+1. Open `index.html` in a browser 
 1. Fill out invoice and print
+
+Optionally, you could have the 2nd step above be "put in web accessible directory", but this app works both with and with a web server.  The simplicity of just HTML/CSS/JavaScript!!
 
 **Note** -  This does not support saving and editing old invoice.  Just simple one off invoice creating ;)
 
