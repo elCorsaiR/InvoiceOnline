@@ -1,17 +1,28 @@
 # Invoice Online
 
-Easy and fast tool to create an invoice.
+Simple single page app all in HTML, CSS & JavaScript. Fill it out, print to PDF or to 
+paper.
 
-* Fill in fields
-* Save invoice
-* Print invoice
+## Use
 
-## Screen
+1. Download this repo
+1. Put it in web accessible directory
+1. Point a browser at it
+1. Fill out invoice and print
 
-<p style="border: 1px solid #ccc">
-  <img src="/img/screenshot.png" alt="Invoice Online">
-</p>
+## Contributions & Thanks 
 
+Contributions welcome - open a PR and let's do it!!
 
-This is a fork of  [Alex P.'s](https://www.upwork.com/freelancers/~0182eeece8bbb1a52c) great  
-[InvoiceOnline](https://github.com/elCorsaiR/InvoiceOnline)
+This is a fork of  [Alex P.'s](https://www.upwork.com/freelancers/~0182eeece8bbb1a52c) great 
+[InvoiceOnline](https://github.com/elCorsaiR/InvoiceOnline) project.
+
+## Screen Shots
+
+Here's the UI in a browser:
+
+<img src="/img/screenshot.png" alt="Invoice Online">
+
+Here's what it looks like when you print it:
+
+<img src="/img/print.png" alt="Invoice Print">
