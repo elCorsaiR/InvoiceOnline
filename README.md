@@ -1,7 +1,7 @@
 # Invoice Online
 
 Simple single page app all in HTML, CSS & JavaScript. Fill it out, print to PDF or to 
-paper.
+paper. See [live demo](https://plip.com/InvoiceOnline)!
 
 ## Use
 
