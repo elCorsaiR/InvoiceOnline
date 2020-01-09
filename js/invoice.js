@@ -4,6 +4,7 @@ $(document).ready(function () {
 
     appendItem();
     updateSubTotal();
+    setCurrency();
 
     $("#append_item_button").on("click", function () {
         appendItem();
@@ -24,9 +25,17 @@ $(document).ready(function () {
     $('#tax').on('blur', function () {
         updateTaxAndTotal(this);
     });
+    $('#setCurrency').on('click', function () {
+        setCurrency();
+    });
 });
 
-
+setCurrency = function () {
+    var currency = $('#currency').val();
+    $('.currency').attr('data-before', 'annything');
+    $('.currency').append('<style>.currency:before{content:"' + currency + '";}</style>');
+    console.log('currency set: ' + currency);
+};
 
 appendItem = function () {
     var last_item_id = $('#items > tr:last').attr("id");

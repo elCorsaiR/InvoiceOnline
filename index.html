@@ -27,7 +27,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-8 main_area">
+        <div class="col-sm-9 main_area">
             <div class="row">
                 <div class="col-xs-6">
                     <table width="100%" cellpadding="0" cellspacing="0" style="table-layout: fixed">
@@ -115,11 +115,11 @@
                                name="quantity_0">
                     </td>
                     <td>
-                        <input type="text" class="w100 text-right unit_price" value="0.00" tabindex="22"
+                        <input type="text" class="w100 text-right unit_price currency" value="0.00" tabindex="22"
                                id="unit_price_0"
                                name="unit_price_0">
                     </td>
-                    <td id="total_0" class="text-right">
+                    <td id="total_0" class="text-right currency">
                         0.00
                     </td>
                     <td>
@@ -148,7 +148,7 @@
                     </td>
 
                     <td colspan="2">Sub Total</td>
-                    <td id="sub_total" class="text-right"></td>
+                    <td id="sub_total" class="text-right currency"></td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -156,12 +156,12 @@
                         Tax (<input type="text" value="10" tabindex="23" id="tax" size="2" maxlength="2"
                                     name="tax">%)
                     </td>
-                    <td id="tax_amount" class="text-right"> 0.00</td>
+                    <td id="tax_amount" class="text-right currency"> 0.00</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr class="tot">
                     <td colspan="2"> TOTAL DUE</td>
-                    <td id="total" class="text-right">
+                    <td id="total" class="text-right currency">
                         0.00
                     </td>
                     <td>&nbsp;</td>
@@ -181,8 +181,19 @@
 
         </div>
 
-        <div class="col-sm-4 hidden-print">
-            <div class="info"><h3>Click on underlined items to edit</h3></div>
+
+        <div class="col-sm-3 hidden-print ">
+            <div class="info"><h3>Change Currency</h3></div>
+
+            <div class="col-sm-4">
+                <input type="text" value="$" id="currency" size="2" maxlength="2" name="currency">
+            </div>
+            <div class=" col-sm-8 ">
+                <button class="btn btn-success btn-block" id="setCurrency">Set</button>
+            </div>
+
+        </div>
+        <div class="col-sm-3 hidden-print">
 
             <div id="tools">
                 <button class="btn btn-success btn-block" onclick="window.print()">
@@ -195,13 +206,8 @@
 </div>
 
 
-<!-- jQuery -->
 <script src="js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
-
-<!-- Custom Theme JavaScript -->
 <script src="js/invoice.js"></script>
 
 </body>
